@@ -6,7 +6,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  value: string = '';
+  value = '';
   title = 'app';
 
   rooms: FirebaseListObservable<any[]>;
@@ -16,6 +16,6 @@ export class AppComponent {
 
   update(value: string) {
     this.value = value;
-    setTimeout(()=>this.value = '', 1000);
+    setTimeout(() => this.value = '', 1000);
   }
 }

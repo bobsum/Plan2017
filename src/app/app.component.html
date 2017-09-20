@@ -5,6 +5,6 @@
 
 <ul>
   <li class="text" *ngFor="let room of rooms | async">
-    {{room.name}}
+    <app-queue-scout [name]="room.name" [scouts]="room.scouts"></app-queue-scout>
   </li>
 </ul>

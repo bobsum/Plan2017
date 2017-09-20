@@ -9,12 +9,14 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { KeyComponent } from './key.component';
 import { KeypadComponent } from './keypad.component';
+import { QueueScoutComponent } from './queue-scout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     KeyComponent,
-    KeypadComponent
+    KeypadComponent,
+    QueueScoutComponent
   ],
   imports: [
     BrowserModule,
