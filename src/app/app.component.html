@@ -2,3 +2,9 @@
   <app-keypad (valueChange)="update($event)" [value]="value"></app-keypad>
 </div>
 {{ value }}
+
+<ul>
+  <li class="text" *ngFor="let room of rooms | async">
+    {{room.name}}
+  </li>
+</ul>

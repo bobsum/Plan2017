@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "plan2017-dc217",
+    "default": "plan2017-dc217"
+  }
+}
