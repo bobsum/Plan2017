@@ -1,10 +1,5 @@
-<div>
-  <app-keypad (valueChange)="update($event)" [value]="value"></app-keypad>
+<div class="container-fluid h-100">
+  <div class="row align-items-center justify-content-center h-100">
+    <app-keypad (valueChange)="update($event)" [value]="value"></app-keypad>
+  </div>
 </div>
-{{ value }}
-
-<ul>
-  <li class="text" *ngFor="let room of rooms | async">
-    <app-queue-scout [name]="room.name" [scouts]="room.scouts"></app-queue-scout>
-  </li>
-</ul>

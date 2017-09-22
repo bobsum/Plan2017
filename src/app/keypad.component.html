@@ -1,27 +1,29 @@
-<table>
-  <tr>
-    <td colspan="3" class="text-center">
-        &nbsp;<span *ngFor="let digit of sequence"><i class="fa fa-asterisk text-primary" aria-hidden="true"></i>&nbsp;</span>
-    </td>
-  </tr>
-  <tr>
-    <td><app-key text="1" (click)="add(1)"></app-key></td>
-    <td><app-key text="2" (click)="add(2)"></app-key></td>
-    <td><app-key text="3" (click)="add(3)"></app-key></td>
-  </tr>
-  <tr>
-    <td><app-key text="4" (click)="add(4)"></app-key></td>
-    <td><app-key text="5" (click)="add(5)"></app-key></td>
-    <td><app-key text="6" (click)="add(6)"></app-key></td>
-  </tr>
-  <tr>
-    <td><app-key text="7" (click)="add(7)"></app-key></td>
-    <td><app-key text="8" (click)="add(8)"></app-key></td>
-    <td><app-key text="9" (click)="add(9)"></app-key></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><app-key text="0" (click)="add(0)"></app-key></td>
-    <td><app-key text="Slet" (click)="remove()" type="btn-outline-danger"></app-key></td>
-  </tr>
-</table>
+<div class="row justify-content-center">
+  <div class="col-auto">
+    <div class="row no-gutters justify-content-center">
+      <div class="col alert alert-secondary text-center">
+          &nbsp;<span *ngFor="let digit of sequence"><i class="fa fa-asterisk text-primary" aria-hidden="true"></i>&nbsp;</span>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col"><app-key text="1" (click)="add(1)"></app-key></div>
+      <div class="col"><app-key text="2" (click)="add(2)"></app-key></div>
+      <div class="col"><app-key text="3" (click)="add(3)"></app-key></div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col"><app-key text="4" (click)="add(4)"></app-key></div>
+      <div class="col"><app-key text="5" (click)="add(5)"></app-key></div>
+      <div class="col"><app-key text="6" (click)="add(6)"></app-key></div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col"><app-key text="7" (click)="add(7)"></app-key></div>
+      <div class="col"><app-key text="8" (click)="add(8)"></app-key></div>
+      <div class="col"><app-key text="9" (click)="add(9)"></app-key></div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col"></div>
+      <div class="col"><app-key text="0" (click)="add(0)"></app-key></div>
+      <div class="col"><app-key text="Slet" (click)="remove()" type="btn-outline-danger"></app-key></div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,23 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 })
 export class AppComponent {
   value = '';
+  valueSubject = new Subject();
   title = 'app';
 
-  rooms: FirebaseListObservable<any[]>;
+  scouts: FirebaseListObservable <any[]>;
   constructor(db: AngularFireDatabase) {
-    this.rooms = db.list('/rooms');
+    this.scouts = db.list('/scouts', {
+      query: {
+        orderByKey: true,
+        equalTo: this.valueSubject,
+        limitToFirst: 1
+      }
+    });
   }
 
   update(value: string) {
     this.value = value;
+    this.valueSubject.next(value);
     setTimeout(() => this.value = '', 1000);
   }
 }
