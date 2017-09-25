@@ -2,7 +2,6 @@
 body, html {
   height: 100%;
   background-color: black;
-  -webkit-touch-callout: none !important;
 }
 .btn-circle {
   width: 30px;
@@ -39,19 +38,15 @@ body, html {
   border-radius: 50px;
 }
 .hand {
-  user-select: none !important;
-  -webkit-user-select: none !important;
   height: 1024px;
   width: 768px;
-}
-.hand-path {
   fill-opacity:1;
-  stroke:blue;
+  stroke:#28a745;
   stroke-width:3;
   stroke-opacity:1;
   stroke-miterlimit:4;
   stroke-dasharray:none;
-}
-.down .hand-path {
-  fill:#28a745;
+  .down {
+    fill:#28a745;
+  }
 }

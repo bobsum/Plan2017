@@ -8,8 +8,9 @@ import 'rxjs/add/operator/map';
   templateUrl: './hand-scan.component.html'
 })
 export class HandScanComponent implements OnInit {
-  down = false;
-
+  timeouts = [];
+  down = [false, false, false, false, false];
+  
   constructor(
     private route: ActivatedRoute,
     private router: Router
@@ -20,14 +21,23 @@ export class HandScanComponent implements OnInit {
     //todo load scout object
   }
 
-  onMouseDown(event: MouseEvent) {
-    this.down = true;
-    setTimeout(()=> this.down = false, 1000);
-    event.preventDefault();
+  add(index) {
+    this.remove(index);
+    this.timeouts[index] = setTimeout(() => this.down[index] = true, 1000);
   }
 
-  onMouseUp() {
-    //this.down = false;
-    event.preventDefault();
+  remove(index) {
+    clearTimeout(this.timeouts[index]);
+  }
+
+  isDown(index) {
+    return this.down[index];
+  }
+
+  isOk() {
+    for (var i = 0; i < this.down.length; i++) {
+      if(!this.down[i]) return false;;      
+    }
+    return true;
   }
 }
