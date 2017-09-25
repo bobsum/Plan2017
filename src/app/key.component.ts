@@ -6,5 +6,5 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class KeyComponent {
   @Input() text: string;
-  @Input() type = 'btn-outline-primary';
+  @Input() type = 'btn-outline-success';
 }

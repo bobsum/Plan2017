@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body, html {
   height: 100%;
+  background-color: black;
+  -webkit-touch-callout: none !important;
 }
 .btn-circle {
   width: 30px;
@@ -10,6 +12,7 @@ body, html {
   font-size: 12px;
   line-height: 1.428571429;
   border-radius: 15px;
+  border-width: 3px;
 }
 .btn-circle.btn-lg {
   width: 50px;
@@ -34,4 +37,21 @@ body, html {
   font-size: 30px;
   line-height: 1.33;
   border-radius: 50px;
+}
+.hand {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  height: 1024px;
+  width: 768px;
+}
+.hand-path {
+  fill-opacity:1;
+  stroke:blue;
+  stroke-width:3;
+  stroke-opacity:1;
+  stroke-miterlimit:4;
+  stroke-dasharray:none;
+}
+.down .hand-path {
+  fill:#28a745;
 }
