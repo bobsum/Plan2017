@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 export class HandScanComponent implements OnInit {
   timeouts = [];
   down = [false, false, false, false, false];
-  
+
   constructor(
     private route: ActivatedRoute,
     private router: Router
@@ -18,7 +18,7 @@ export class HandScanComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.route.snapshot.paramMap.get('id'));
-    //todo load scout object
+    // todo load scout object
   }
 
   add(index) {
@@ -35,8 +35,10 @@ export class HandScanComponent implements OnInit {
   }
 
   isOk() {
-    for (var i = 0; i < this.down.length; i++) {
-      if(!this.down[i]) return false;;      
+    for (let i = 0; i < this.down.length; i++) {
+      if (!this.down[i]) {
+        return false;
+      }
     }
     return true;
   }

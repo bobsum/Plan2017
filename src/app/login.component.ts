@@ -9,7 +9,7 @@ import { Subject } from 'rxjs/Subject';
   selector: 'app-login',
   templateUrl: './login.component.html'
 })
-export class LoginComponent{
+export class LoginComponent {
   value = '';
   value$ = new Subject();
   title = 'app';
