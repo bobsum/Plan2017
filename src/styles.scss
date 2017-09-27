@@ -50,3 +50,9 @@ body, html {
     fill:#28a745;
   }
 }
+circle {
+  fill-opacity:0;
+  stroke:#dc3545;
+  stroke-dasharray:9, 9;
+  stroke-dashoffset:0;
+}
