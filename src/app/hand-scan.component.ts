@@ -14,6 +14,7 @@ export class HandScanComponent implements OnInit {
   down = [false, false, false, false, false];
 
   scout$: FirebaseObjectObservable<any>;
+  soundEnabled = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,22 +23,28 @@ export class HandScanComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.scout$ = this.db.object(`/scouts/${id}`);
     this.scout$.subscribe(s => console.log(s));
-    // todo load scout object
   }
 
-  add(index) {
+  add(index: number) {
     this.remove(index);
-    this.timeouts[index] = setTimeout(() => this.down[index] = true, 1000);
+    this.timeouts[index] = setTimeout(() => this.accept(index), 1000);
   }
 
-  remove(index) {
+  remove(index: number) {
     clearTimeout(this.timeouts[index]);
   }
 
-  isDown(index) {
+  accept(index: number) {
+    this.down[index] = true;
+    if (this.isOk()) {
+      this.play('Rasmus Jensen');
+    }
+  }
+
+  isDown(index: number) {
     return this.down[index];
   }
 
@@ -48,5 +55,18 @@ export class HandScanComponent implements OnInit {
       }
     }
     return true;
+  }
+
+  play(value) {
+    const msg = new SpeechSynthesisUtterance(value);
+    msg.onend = () => console.log('Utterance has finished being spoken after');
+    window.speechSynthesis.speak(msg);
+  }
+
+  enableSound() {
+    if (!this.soundEnabled) {
+      this.play(' ');
+      this.soundEnabled = true;
+    }
   }
 }
