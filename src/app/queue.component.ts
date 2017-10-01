@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import {Observable} from 'rxjs/Observable';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/combineLatest';
 
@@ -21,7 +21,7 @@ export class QueueComponent implements OnInit {
       return rooms.map(room => {
         return {
           name: room.name,
-          scouts: (room.scouts || []).map(scout => scouts.find(s => s.$key == scout).name) 
+          scouts: scouts.filter(s => room.$key === s.currentRoom) 
         }
       });
     });

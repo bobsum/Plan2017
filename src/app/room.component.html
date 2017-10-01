@@ -1,3 +1,8 @@
-<p>
-  room works!
-</p>
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col h-50">
+      <app-queue-room [name]="(room$ | async)?.name" [scouts]="scouts$ | async"></app-queue-room>
+    </div>
+    <button (click)="done()" class="btn btn-primary btn-lg btn-block">Færdig</button>
+  </div>
+</div>

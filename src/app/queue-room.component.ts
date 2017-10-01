@@ -6,5 +6,5 @@ import { Component, Input, HostBinding } from '@angular/core';
 })
 export class QueueRoomComponent {
   @Input() name: string;
-  @Input() scouts: string[];
+  @Input() scouts: any[];
 }

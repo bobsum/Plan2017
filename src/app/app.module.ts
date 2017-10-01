@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import 'hammerjs';
@@ -19,6 +20,7 @@ import { QueueRoomComponent } from './queue-room.component';
 import { HandScanComponent } from './hand-scan.component';
 import { QueueComponent } from './queue.component';
 import { RoomComponent } from './room.component';
+import { MainComponent } from './main.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { RoomComponent } from './room.component';
     LoginComponent,
     HandScanComponent,
     QueueComponent,
-    RoomComponent
+    RoomComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { RoomComponent } from './room.component';
     AngularFireDatabaseModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

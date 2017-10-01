@@ -1,35 +1,37 @@
 {
   "rooms" : {
-    "1" : {
-      "name" : "Test1",
-      "numberOfScouts" : 2,
-      "scouts" : [123456, 234567]
+    "intellect" : {
+      "name" : "Mensa",
+      "numberOfScouts" : 2
     },
-    "2" : {
-      "name" : "Test2",
-      "numberOfScouts" : 1,
-      "scouts" : []
+    "physic" : {
+      "name" : "Fysisk",
+      "numberOfScouts" : 1
     },
-    "3" : {
-      "name" : "Test3",
-      "numberOfScouts" : 1,
-      "scouts" : []
+    "mental" : {
+      "name" : "Psykisk",
+      "numberOfScouts" : 1
     },
-    "4" : {
-      "name" : "Test4",
-      "numberOfScouts" : 1,
-      "scouts" : []
+    "precision" : {
+      "name" : "Præcision",
+      "numberOfScouts" : 2
+    },
+    "attention" : {
+      "name" : "Opmærksomhed",
+      "numberOfScouts" : 1
+    },
+    "creative" : {
+      "name" : "Kreativ",
+      "numberOfScouts" : 4
     }
   },
   "scouts" : {
     "123456" : {
       "arrived" : true,
-      "inRoom" : false,
       "name" : "Rasmus Jensen"
     },
     "234567" : {
       "arrived" : false,
-      "inRoom" : false,
       "name" : "Morten Fjord"
     }
   }

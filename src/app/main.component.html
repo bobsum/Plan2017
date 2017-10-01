@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="/assets/apple-touch-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    S.K.J.O.L.D.
+  </a>
+  <div class="collapse navbar-collapse show">
+    <div class="navbar-nav">
+        <a [routerLink]="['/login']" class="nav-item nav-link text-primary">Håndscanner</a>
+        <a [routerLink]="['/queue']" class="nav-item nav-link text-primary">Kø</a>
+      <a *ngFor="let room of rooms$ | async" [routerLink]="['/room', room.$key]" class="nav-item nav-link">{{ room.name }}</a>
+    </div>
+  </div>
+</nav>
+
