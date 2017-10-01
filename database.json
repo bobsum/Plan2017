@@ -1,0 +1,36 @@
+{
+  "rooms" : {
+    "1" : {
+      "name" : "Test1",
+      "numberOfScouts" : 2,
+      "scouts" : [123456, 234567]
+    },
+    "2" : {
+      "name" : "Test2",
+      "numberOfScouts" : 1,
+      "scouts" : []
+    },
+    "3" : {
+      "name" : "Test3",
+      "numberOfScouts" : 1,
+      "scouts" : []
+    },
+    "4" : {
+      "name" : "Test4",
+      "numberOfScouts" : 1,
+      "scouts" : []
+    }
+  },
+  "scouts" : {
+    "123456" : {
+      "arrived" : true,
+      "inRoom" : false,
+      "name" : "Rasmus Jensen"
+    },
+    "234567" : {
+      "arrived" : false,
+      "inRoom" : false,
+      "name" : "Morten Fjord"
+    }
+  }
+}

@@ -12,6 +12,7 @@ body, html {
   line-height: 1.428571429;
   border-radius: 15px;
   border-width: 3px;
+  margin: 5px;
 }
 .btn-circle.btn-lg {
   width: 50px;
@@ -49,10 +50,17 @@ body, html {
   .down {
     fill:#28a745;
   }
+  circle {
+    fill-opacity:0;
+    stroke:#dc3545;
+    stroke-dasharray:9, 9;
+    stroke-dashoffset:0;
+  }
 }
-circle {
-  fill-opacity:0;
-  stroke:#dc3545;
-  stroke-dasharray:9, 9;
-  stroke-dashoffset:0;
+.queue-room {
+  padding: 20% 0 0;
 }
+.queue {
+  border: 1.5px solid white;
+}
+

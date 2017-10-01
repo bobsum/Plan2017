@@ -15,17 +15,21 @@ import { AppComponent } from './app.component';
 import { KeyComponent } from './key.component';
 import { KeypadComponent } from './keypad.component';
 import { LoginComponent } from './login.component';
-import { QueueScoutComponent } from './queue-scout.component';
+import { QueueRoomComponent } from './queue-room.component';
 import { HandScanComponent } from './hand-scan.component';
+import { QueueComponent } from './queue.component';
+import { RoomComponent } from './room.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     KeyComponent,
     KeypadComponent,
-    QueueScoutComponent,
+    QueueRoomComponent,
     LoginComponent,
-    HandScanComponent
+    HandScanComponent,
+    QueueComponent,
+    RoomComponent
   ],
   imports: [
     BrowserModule,

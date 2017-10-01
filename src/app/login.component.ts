@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   value$ = new Subject();
   title = 'app';
 
+  soundEnabled = false;
+
   constructor(
     private router: Router,
     private db: AngularFireDatabase) {
@@ -34,8 +36,17 @@ export class LoginComponent implements OnInit {
   }
 
   update(value: string) {
+    this.enableSound();
     this.value = value;
     this.value$.next(value);
     setTimeout(() => this.value = '', 1000);
+  }
+
+  enableSound() {
+    if (!this.soundEnabled) {
+      const utter = new SpeechSynthesisUtterance('');
+      window.speechSynthesis.speak(utter);
+      this.soundEnabled = true;
+    }
   }
 }
