@@ -21,9 +21,13 @@ export class QueueComponent implements OnInit {
       return rooms.map(room => {
         return {
           name: room.name,
-          scouts: scouts.filter(s => room.$key === s.currentRoom) 
-        }
+          scouts: scouts.filter(s => room.$key === s.currentRoom)
+        };
       });
+    });
+    const audio = new Audio('../assets/ding.mp3');
+    this.rooms$.subscribe(() => {
+      audio.play();
     });
   }
 }

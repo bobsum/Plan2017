@@ -41,7 +41,7 @@ export class HandScanComponent implements OnInit {
     this.down[index] = true;
     if (!this.isOk()) {
       return;
-    } 
+    }
 
     const utter = new SpeechSynthesisUtterance(`Velkommen ${this.name}`);
     window.speechSynthesis.speak(utter);
