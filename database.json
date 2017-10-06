@@ -1,33 +1,39 @@
 {
   "rooms" : {
     "intellect" : {
+      "isFree" : true,
       "name" : "Mensa",
       "numberOfScouts" : 2
     },
     "physic" : {
+      "isFree" : true,
       "name" : "Fysisk",
       "numberOfScouts" : 1
     },
     "mental" : {
+      "isFree" : true,
       "name" : "Psykisk",
       "numberOfScouts" : 1
     },
     "precision" : {
+      "isFree" : true,
       "name" : "Præcision",
       "numberOfScouts" : 2
     },
     "attention" : {
+      "isFree" : true,
       "name" : "Opmærksomhed",
       "numberOfScouts" : 1
     },
     "creative" : {
+      "isFree" : true,
       "name" : "Kreativ",
       "numberOfScouts" : 4
     }
   },
   "scouts" : {
     "123456" : {
-      "arrived" : true,
+      "arrived" : false,
       "name" : "Rasmus Jensen"
     },
     "234567" : {

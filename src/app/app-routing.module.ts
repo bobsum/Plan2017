@@ -5,7 +5,7 @@ import { HandScanComponent } from './hand-scan.component';
 import { LoginComponent } from './login.component';
 import { QueueComponent } from './queue.component';
 import { RoomComponent } from './room.component';
-import { MainComponent } from "./main.component";
+import { MainComponent } from './main.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },

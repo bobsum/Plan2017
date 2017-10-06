@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 import 'rxjs/add/operator/map';
 
@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 export class HandScanComponent implements OnInit {
   timeouts = [];
   down = [false, false, false, false, false];
-
+  scout$: FirebaseObjectObservable<any>;
   name: string;
 
   constructor(
@@ -24,8 +24,8 @@ export class HandScanComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
-    this.db.object(`/scouts/${id}`)
-      .subscribe(s => this.name = s.name);
+    this.scout$ = this.db.object(`/scouts/${id}`);
+    this.scout$.subscribe(s => this.name = s.name);
   }
 
   add(index: number) {
@@ -45,7 +45,7 @@ export class HandScanComponent implements OnInit {
 
     const utter = new SpeechSynthesisUtterance(`Velkommen ${this.name}`);
     window.speechSynthesis.speak(utter);
-
+    this.scout$.update({ arrived: true });
     setTimeout(() => this.router.navigate(['/login']), 10000);
   }
 

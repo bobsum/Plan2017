@@ -25,7 +25,7 @@ export class RoomComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.room$ = this.db.object(`/rooms/${id}`);
-    this.scouts$ = this.db.list('/scouts', { 
+    this.scouts$ = this.db.list('/scouts', {
       query: {
         orderByChild: 'currentRoom',
         equalTo: id,
@@ -38,6 +38,6 @@ export class RoomComponent implements OnInit {
     this.scouts.forEach(scout => {
       this.scouts$.update(scout.$key, { currentRoom: null });
     });
-    //todo set more
+    this.room$.update({ isFree: true });
   }
 }

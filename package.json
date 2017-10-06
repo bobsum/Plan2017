@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy-a": "ng build && firebase deploy",
-    "deploy-h": "ng build && firebase deploy --only hosting"
+    "deploy-h": "ng build && firebase deploy --only hosting",
+    "deploy-f": "firebase deploy --only functions"
   },
   "private": true,
   "dependencies": {
