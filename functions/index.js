@@ -8,7 +8,7 @@ exports.roomFree = functions.database.ref('/rooms/{room}/isFree').onUpdate(event
   if(!event.data.val()) {
     return Promise.resolve();
   }
-  return addScoutsToRoom(event.data.ref.parent);
+  return updateQueues();
 });
 
 exports.scoutArrived = functions.database.ref('/scouts/{scout}/arrived').onUpdate(event => {
@@ -16,68 +16,84 @@ exports.scoutArrived = functions.database.ref('/scouts/{scout}/arrived').onUpdat
     return Promise.resolve();
   }
 
-  return admin.database().ref('/rooms')
-    .orderByChild('isFree')
-    .equalTo(true)
-    .limitToFirst(1)
-    .once('value')
-    .then(rooms => {
-      var room;
-      if(!rooms.forEach(r => {
-        room = r;
-        return true;
-      })) {
-        return Promise.resolve();
-      };
-
-      return addScoutsToRoom(room.ref);
-    })
+  return updateQueues();
 });
 
-function findScouts(roomKey) {
+function updateQueues() {
+  return Promise.all([findAvailableRooms(), findAvailableScouts()])
+    .then(v => distributeScouts(v[0], v[1]));
+}
+
+function distributeScouts(rooms, scouts) {
+  var promises = [];
+  rooms.forEach(room => {
+    console.log('scouts', scouts.length);
+    var take = room.val().numberOfScouts;
+    var available = scouts.filter(s => !(s.val().rooms || []).includes(room.key));
+
+    if(available.length < take) {
+      console.log('not enough available');
+      return;
+    }
+
+    promises.push(room.ref.update({ isFree: false }));
+
+    var selected = available.slice(0, take);
+
+    selected.forEach(s => {
+      var index = scouts.indexOf(s);
+      if (index > -1){
+        scouts.splice(index, 1);
+      }
+
+      var rooms = s.val().rooms || [];
+      rooms.push(room.key);
+      promises.push(s.ref.update({
+        currentRoom: room.key,
+        rooms: rooms
+      }));
+    });
+  });
+  return Promise.all(promises);
+}
+
+function findAvailableRooms() {
+  return admin.database().ref('/rooms')
+  .orderByChild('isFree')
+  .equalTo(true)
+  .once('value')
+  .then(rooms => {
+    var available = [];
+    rooms.forEach(r => {
+      available.push(r)
+    });
+
+    available.sort((a, b) => b.val().numberOfScouts - a.val().numberOfScouts);
+
+    console.log(available.map(a => a.val()));
+
+    return available;
+  });
+}
+
+function findAvailableScouts() {
   return admin.database().ref('/scouts')
     .orderByChild('arrived')
     .equalTo(true)
     .once('value')
     .then(scouts => {
-      free = [];
+      available = [];
       scouts.forEach(s => {
         var scout = s.val();
-        if(!scout.currentRoom && !(scout.rooms || []).includes(roomKey)) {
-          free.push(s);
+        if(!scout.currentRoom) {
+          available.push(s);
         }
       });
 
-      free.sort((a, b) => (a.val().rooms || []).length - (b.val().rooms || []).length);
+      available.sort((a, b) => (a.val().rooms || []).length - (b.val().rooms || []).length);
 
-      return free;
+      console.log(available.map(a => a.val()));
+
+      return available;
     });
-}
-
-function addScoutsToRoom(roomRef) {
-  var roomKey = roomRef.key;
-  var tP = roomRef.child('numberOfScouts').once('value');
-  var sP = findScouts(roomKey);
-
-  return Promise.all([tP, sP]).then(v => {
-    var take = v[0].val();
-    var scouts = v[1];
-
-    if(scouts.length < take) {
-      return Promise.resolve();
-    }
-
-    var selectedScouts = scouts.slice(0, take);
-
-    var uPs = selectedScouts.map(s => {
-      var rooms = s.val().rooms || [];
-      rooms.push(roomKey);
-      return s.ref.update({
-        currentRoom: roomKey,
-        rooms: rooms
-      })
-    });
-    uPs.push(roomRef.update({ isFree: false }));
-    return Promise.all(uPs);
-  });
 }

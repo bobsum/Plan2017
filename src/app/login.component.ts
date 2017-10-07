@@ -22,14 +22,16 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.db.list('/scouts', {
+    const sub = this.db.list('/scouts', {
       query: {
         orderByKey: true,
         equalTo: this.value$,
         limitToFirst: 1
       }
     }).subscribe(scouts => {
+      console.log('hit L');
       if (scouts.length === 1) {
+        sub.unsubscribe();
         this.router.navigate(['/login', scouts[0].$key]);
       }
     });

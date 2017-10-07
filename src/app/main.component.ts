@@ -17,7 +17,9 @@ export class MainComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.afAuth.auth.signInAnonymously();
-    this.rooms$ = this.db.list('/rooms');
+    this.afAuth.auth.signInAnonymously()
+      .then(() => {
+        this.rooms$ = this.db.list('/rooms');    
+      });
   }
 }

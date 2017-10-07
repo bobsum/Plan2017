@@ -25,12 +25,16 @@ export class HandScanComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
     this.scout$ = this.db.object(`/scouts/${id}`);
-    this.scout$.subscribe(s => this.name = s.name);
+    var sub = this.scout$
+      .subscribe(s => {
+        this.name = s.name;
+        sub.unsubscribe();
+      });
   }
 
   add(index: number) {
     this.remove(index);
-    this.timeouts[index] = setTimeout(() => this.accept(index), 700);
+    this.timeouts[index] = setTimeout(() => this.accept(index), 500);
   }
 
   remove(index: number) {
@@ -46,7 +50,7 @@ export class HandScanComponent implements OnInit {
     const utter = new SpeechSynthesisUtterance(`Velkommen ${this.name}`);
     window.speechSynthesis.speak(utter);
     this.scout$.update({ arrived: true });
-    setTimeout(() => this.router.navigate(['/login']), 10000);
+    setTimeout(() => this.router.navigate(['/login']), 5000);
   }
 
   isDown(index: number) {
