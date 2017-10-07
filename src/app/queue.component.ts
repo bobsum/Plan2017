@@ -4,6 +4,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/combineLatest';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-queue',
@@ -26,8 +28,11 @@ export class QueueComponent implements OnInit {
       });
     });
     const audio = new Audio('../assets/ding.mp3');
-    this.rooms$.subscribe(() => {
-      audio.play();
-    });
+    this.rooms$
+      .map(r => JSON.stringify(r))
+      .distinctUntilChanged()
+      .subscribe(() => {
+        audio.play();
+      });
   }
 }
