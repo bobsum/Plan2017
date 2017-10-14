@@ -13,7 +13,7 @@
     "mental" : {
       "isFree" : true,
       "name" : "Psykisk",
-      "numberOfScouts" : 1
+      "numberOfScouts" : 2
     },
     "precision" : {
       "isFree" : true,
@@ -28,17 +28,297 @@
     "creative" : {
       "isFree" : true,
       "name" : "Kreativ",
-      "numberOfScouts" : 4
+      "numberOfScouts" : 2
     }
   },
   "scouts" : {
-    "123456" : {
-      "arrived" : false,
-      "name" : "Rasmus Jensen"
+    "604738": {
+      "name": "Alma Katborg Dahl",
+      "arrived": false
     },
-    "234567" : {
-      "arrived" : false,
-      "name" : "Morten Fjord"
+    "608053": {
+      "name": "Emilie Schønwandt",
+      "arrived": false
+    },
+    "608848": {
+      "name": "Lea Anna Vogelius Bang",
+      "arrived": false
+    },
+    "613148": {
+      "name": "Lærke Schmidt Hartvig  Larsen",
+      "arrived": false
+    },
+    "622383": {
+      "name": "Peter Bonne Rasmussen",
+      "arrived": false
+    },
+    "623964": {
+      "name": "Emma Lerkenfeld Bregendahl",
+      "arrived": false
+    },
+    "625963": {
+      "name": "Halfdan Nikolaj Vilholm  Ibsen",
+      "arrived": false
+    },
+    "626394": {
+      "name": "Mads-Christian André Søgaard Hyrup",
+      "arrived": false
+    },
+    "626499": {
+      "name": "Philip Bjerregaard Arbjerg",
+      "arrived": false
+    },
+    "628283": {
+      "name": "Jonas Brønnum Andersen",
+      "arrived": false
+    },
+    "637044": {
+      "name": "Nikolaj Høj Dahl",
+      "arrived": false
+    },
+    "639211": {
+      "name": "Zenobia Hansen",
+      "arrived": false
+    },
+    "639419": {
+      "name": "Jasmin Nissen",
+      "arrived": false
+    },
+    "639497": {
+      "name": "Christina Lykke Købche Jürs",
+      "arrived": false
+    },
+    "642012": {
+      "name": "Signe  Moll Harboe",
+      "arrived": false
+    },
+    "642431": {
+      "name": "Sophie Frederiksen",
+      "arrived": false
+    },
+    "645534": {
+      "name": "Mads Steen Høyer Larsen",
+      "arrived": false
+    },
+    "649244": {
+      "name": "Olav Haagensen",
+      "arrived": false
+    },
+    "651004": {
+      "name": "Eva Ravn Madsen",
+      "arrived": false
+    },
+    "652226": {
+      "name": "Hannah Vig Stærmose",
+      "arrived": false
+    },
+    "653381": {
+      "name": "Rebecca Nygaard Nielsen",
+      "arrived": false
+    },
+    "654747": {
+      "name": "Louise Bruun",
+      "arrived": false
+    },
+    "655573": {
+      "name": "Emma Jark Marcussen",
+      "arrived": false
+    },
+    "656483": {
+      "name": "Jakob Søgaard-Hansen",
+      "arrived": false
+    },
+    "657253": {
+      "name": "David Willemar Ehlers",
+      "arrived": false
+    },
+    "657611": {
+      "name": "Mathias J. Madsen",
+      "arrived": false
+    },
+    "658454": {
+      "name": "Sarah Helsø",
+      "arrived": false
+    },
+    "663820": {
+      "name": "Robbin Asbjørn Holk Christiansen",
+      "arrived": false
+    },
+    "668665": {
+      "name": "Anton Rønne Lykkegaard",
+      "arrived": false
+    },
+    "669425": {
+      "name": "Rebecca Von Der Lippe Borges",
+      "arrived": false
+    },
+    "672049": {
+      "name": "Nicolai Jacobsen",
+      "arrived": false
+    },
+    "672392": {
+      "name": "Michael Bjergaard Petersen",
+      "arrived": false
+    },
+    "677458": {
+      "name": "Asta Emilie Tørnsø Johansen",
+      "arrived": false
+    },
+    "679738": {
+      "name": "Mikkel Espersen Overbeck",
+      "arrived": false
+    },
+    "688209": {
+      "name": "Charlotte  Holmstrøm",
+      "arrived": false
+    },
+    "690263": {
+      "name": "Sara S. Wind",
+      "arrived": false
+    },
+    "691580": {
+      "name": "Freja Rytter Kjelde",
+      "arrived": false
+    },
+    "691768": {
+      "name": "Anders Woller-Nielsen",
+      "arrived": false
+    },
+    "695001": {
+      "name": "Selma Øster-Rothenborg",
+      "arrived": false
+    },
+    "699939": {
+      "name": "Jacob Mathias Løvaas",
+      "arrived": false
+    },
+    "700342": {
+      "name": "Jeppe  Vind",
+      "arrived": false
+    },
+    "701871": {
+      "name": "Clara Elena Lund",
+      "arrived": false
+    },
+    "705785": {
+      "name": "Sofie Sørensen",
+      "arrived": false
+    },
+    "708088": {
+      "name": "Albert Janssens",
+      "arrived": false
+    },
+    "716947": {
+      "name": "Ruben Lønborg Brandt",
+      "arrived": false
+    },
+    "719637": {
+      "name": "Lauge Markmann Jensen",
+      "arrived": false
+    },
+    "721301": {
+      "name": "Annekatrine Adler Cramer",
+      "arrived": false
+    },
+    "723986": {
+      "name": "Mona Me Hamilton (Miko)",
+      "arrived": false
+    },
+    "724810": {
+      "name": "Marie Skadberg",
+      "arrived": false
+    },
+    "727356": {
+      "name": "Vigga Ejgod Andreasen",
+      "arrived": false
+    },
+    "729315": {
+      "name": "Marie Justesen",
+      "arrived": false
+    },
+    "730936": {
+      "name": "Asta Mary A. Høyer",
+      "arrived": false
+    },
+    "732782": {
+      "name": "Emil Guldberg Julius",
+      "arrived": false
+    },
+    "733268": {
+      "name": "William Schaufuss Renner",
+      "arrived": false
+    },
+    "739228": {
+      "name": "Freja Buus Laursen",
+      "arrived": false
+    },
+    "741244": {
+      "name": "August Maximillian Rosford Tranberg",
+      "arrived": false
+    },
+    "746567": {
+      "name": "Nikolaj Maarbjerg",
+      "arrived": false
+    },
+    "749978": {
+      "name": "Laura Thorgaard Jørgensen",
+      "arrived": false
+    },
+    "754662": {
+      "name": "Emil Borch",
+      "arrived": false
+    },
+    "754714": {
+      "name": "Mikkel Harfeld Brix Jensen",
+      "arrived": false
+    },
+    "756430": {
+      "name": "Philip Lampe Olsen",
+      "arrived": false
+    },
+    "758233": {
+      "name": "Agnes Sørine Frederiksen",
+      "arrived": false
+    },
+    "760223": {
+      "name": "Jacob Anker Ellgaard",
+      "arrived": false
+    },
+    "761468": {
+      "name": "Ida Hother Le Fevre",
+      "arrived": false
+    },
+    "765593": {
+      "name": "Adam Heide Brodersen (Arvid)",
+      "arrived": false
+    },
+    "766544": {
+      "name": "Lauritz Kåre Kaalund Pedersen",
+      "arrived": false
+    },
+    "767744": {
+      "name": "Andreas Meling Bach Poulsen",
+      "arrived": false
+    },
+    "778435": {
+      "name": "Magnus Christensen",
+      "arrived": false
+    },
+    "782663": {
+      "name": "Sarah Wellendorph Ejsing",
+      "arrived": false
+    },
+    "784478": {
+      "name": "Mikkeline Astman Nielsen",
+      "arrived": false
+    },
+    "786828": {
+      "name": "Magnus Abildgren Abrahamsen",
+      "arrived": false
+    },
+    "788855": {
+      "name": "Carl Burmeister Tejsner",
+      "arrived": false
     }
   }
 }
