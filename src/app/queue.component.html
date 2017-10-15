@@ -1,4 +1,4 @@
-<div class="container-fluid h-100">
+<div class="container-fluid h-100 main-queue">
   <div class="row h-100">
     <div class="queue col-4 h-50" *ngFor="let room of rooms$ | async">
       <app-queue-room [name]="room.name" [scouts]="room.scouts"></app-queue-room>

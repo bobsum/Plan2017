@@ -63,4 +63,12 @@ body, html {
 .queue {
   border: 1.5px solid white;
 }
+.main-queue {
+  background-image: url("assets/skjold-splash.jpg");
+  background-size: cover;
+  .queue .text-primary strong {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }
+}
 
