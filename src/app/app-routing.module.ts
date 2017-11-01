@@ -5,6 +5,7 @@ import { HandScanComponent } from './hand-scan.component';
 import { LoginComponent } from './login.component';
 import { QueueComponent } from './queue.component';
 import { RoomComponent } from './room.component';
+import { StatusComponent } from './status.component';
 import { MainComponent } from './main.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'login/:id', component: HandScanComponent },
   { path: 'queue', component: QueueComponent },
   { path: 'room/:id', component: RoomComponent },
+  { path: 'status', component: StatusComponent },
   { path: 'main', component: MainComponent },
   { path: '',   redirectTo: '/main', pathMatch: 'full' }
 ];

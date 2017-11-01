@@ -21,6 +21,7 @@ import { HandScanComponent } from './hand-scan.component';
 import { QueueComponent } from './queue.component';
 import { RoomComponent } from './room.component';
 import { MainComponent } from './main.component';
+import { StatusComponent } from './status.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MainComponent } from './main.component';
     HandScanComponent,
     QueueComponent,
     RoomComponent,
-    MainComponent
+    MainComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
